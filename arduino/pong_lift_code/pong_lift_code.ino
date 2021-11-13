@@ -78,6 +78,24 @@ void loop() {
       motorB('o');
     }
 
+    // TURN <--- -- F
+    if(incomingByte == 32){
+      motorA('R');
+      motorB('L');
+      delay(1000);
+      motorA('o');
+      motorB('o');
+    }
+    // TURN ---> -- H
+    if(incomingByte == 32){
+      motorA('L');
+      motorB('R');
+      delay(1000);
+      motorA('o');
+      motorB('o');
+    }
+     
+
     // say what you got:
     Serial.print("I received: ");
     Serial.println(incomingByte, DEC);
